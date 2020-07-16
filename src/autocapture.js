@@ -9,8 +9,8 @@ import {
     shouldCaptureElement,
     shouldCaptureValue,
     usefulElements,
-    isSensitiveElement
-} from './autocapture-utils';
+    isSensitiveElement,
+} from './autocapture-utils'
 
 var autocapture = {
     _initializedTokens: [],
@@ -52,7 +52,7 @@ var autocapture = {
 
         _.each(elem.attributes, function (attr) {
             // Only capture attributes we know are safe
-            if(isSensitiveElement(elem) && ['name', 'id', 'class'].indexOf(attr.name) === -1) return;
+            if (isSensitiveElement(elem) && ['name', 'id', 'class'].indexOf(attr.name) === -1) return
             if (shouldCaptureValue(attr.value)) {
                 props['attr__' + attr.name] = attr.value
             }
@@ -269,7 +269,7 @@ var autocapture = {
                 instance['__autocapture_enabled'] = false
             }
 
-            if (response['featureFlags'] && response['featureFlags'].length > 0) {
+            if (response['featureFlags']) {
                 instance.persistence &&
                     instance.persistence.register({ $active_feature_flags: response['featureFlags'] })
             } else {
