@@ -1,3 +1,6 @@
+## 1.3.5 - 2020-07-16
+- Add option `.reloadFeatureFlags()`. Pass it a callback to get the flags array upon reload.
+
 ## 1.3.4 - 2020-07-16
 - Capture safe attributes (id, name and class) if the element is an input (#63)
 
